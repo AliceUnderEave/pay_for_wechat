@@ -1,0 +1,6 @@
+Flask
+qrcode
+wechatpy
+pyzbar
+Pillow
+werkzeug

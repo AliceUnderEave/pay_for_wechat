@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>支付成功</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 720px; margin: 24px auto; }
+        .qr { width: 300px; height: 300px; }
+    </style>
 </head>
 <body>
     <h2>支付成功！请扫码加入微信群</h2>
-    <img src="/{{ group_qr }}" alt="微信群二维码" style="width:300px;height:300px;">
+    {% if group_qr %}
+        <img src="/{{ group_qr }}" alt="微信群二维码" class="qr">
+    {% else %}
+        <p>当前未找到可用二维码，请联系管理员。</p>
+    {% endif %}
     <p>如无法扫码，请联系管理员。</p>
 </body>
 </html>

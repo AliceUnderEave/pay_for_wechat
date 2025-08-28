@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>上传微信群二维码</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 720px; margin: 24px auto; }
+    </style>
+</head>
+<body>
+    <h2>上传微信群二维码（PNG）</h2>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for msg in messages %}
+          <li>{{ msg }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form action="/upload_group_qr" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/png">
+        <button type="submit">上传并解析</button>
+    </form>
+
+    <p>上传后服务器会尝试解析图片中的邀请链接并生成新的二维码（保存在 static/group_qr_latest.png）。</p>
+    <p><a href="/">返回首页</a></p>
+</body>
+</html>

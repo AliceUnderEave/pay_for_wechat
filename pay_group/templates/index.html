@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>付费入群</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 720px; margin: 24px auto; }
+        .qr { width: 300px; height: 300px; }
+        .actions { margin-top: 16px; }
+    </style>
 </head>
 <body>
     <h2>加入微信群，请先支付费用</h2>
-    <form action="/pay" method="post">
-        <button type="submit">付费入群</button>
-    </form>
+    <div>
+        {% if group_qr %}
+            <p>当前可用入群二维码（由最新上传二维码解析并重新生成）：</p>
+            <img src="/{{ group_qr }}" alt="群二维码" class="qr">
+        {% else %}
+            <p>尚未上传群二维码或解析失败，请上传群二维码图片（PNG）。</p>
+        {% endif %}
+    </div>
+
+    <div class="actions">
+        <form action="/pay" method="post" style="display:inline-block; margin-right:12px;">
+            <button type="submit">付费入群</button>
+        </form>
+
+        <a href="/upload_group_qr"><button type="button">上传/更新群二维码</button></a>
+    </div>
+
 </body>
 </html>
