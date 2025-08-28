@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>微信支付二维码</title>
+</head>
+<body>
+    <h2>请扫码支付入群费用</h2>
+    <img src="/{{ qr_path }}" alt="微信支付二维码" style="width:300px;height:300px;">
+    <form action="/pay_success" method="get">
+        <button type="submit">我已支付，查看入群二维码</button>
+    </form>
+    <p>支付成功后可点击按钮进入入群页面。</p>
+</body>
+</html>
