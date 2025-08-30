@@ -5,3 +5,10 @@ pyzbar
 Pillow
 werkzeug
 waitress
+Flask
+qrcode
+wechatpy
+pyzbar
+Pillow
+werkzeug
+waitress
