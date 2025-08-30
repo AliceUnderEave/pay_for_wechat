@@ -4,3 +4,4 @@ wechatpy
 pyzbar
 Pillow
 werkzeug
+waitress
